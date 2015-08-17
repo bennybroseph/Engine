@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Engine">
+      <UniqueIdentifier>{045ad0f3-8cde-4965-974f-34833a57d935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{4646d9f5-ed2a-42c0-a90d-4509404ed08a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Battle">
+      <UniqueIdentifier>{eaed3e84-828d-4e09-b2cd-5cd763767a29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Camera">
+      <UniqueIdentifier>{83f06102-1702-4b42-8f26-d04dfb3109be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Layer">
+      <UniqueIdentifier>{7820b3d5-61a3-42fe-a7ce-d2c799d5ece6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Message">
+      <UniqueIdentifier>{1c2dd68e-70b9-42c9-9e68-89df27be04a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\NPC">
+      <UniqueIdentifier>{72f08b0b-6b28-466e-904d-6d5b5f54a67f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Red">
+      <UniqueIdentifier>{5ba9fcdc-ad05-45ff-a201-09352f9e77d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Sprite">
+      <UniqueIdentifier>{e6936e43-a684-4623-adc5-15fe25404d0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Debug">
+      <UniqueIdentifier>{42b05de8-fb8e-4498-ae6e-d53dabf400e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\EventHandler">
+      <UniqueIdentifier>{b6159274-1a8a-4862-9ee4-e42abd153919}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\FPS">
+      <UniqueIdentifier>{35d34f18-006b-4d97-893e-d3d300491672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Graphics">
+      <UniqueIdentifier>{4409ba7a-2903-4cb5-9dc1-b39c04710466}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Loop">
+      <UniqueIdentifier>{43ddd729-23d9-4fa6-b3bf-5c88e2562a69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Sound">
+      <UniqueIdentifier>{678412a4-011c-489a-ae78-6ec7a64c77de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\Text">
+      <UniqueIdentifier>{e0d563ca-89a6-4877-a001-cfbf6df123f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Engine\TextIn">
+      <UniqueIdentifier>{d7e1493b-cce2-4427-9a38-a0cb1be8b1e8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Project\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Classes\Main Loop.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Engine\Loops\Loops.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Classes\Battle\Battle.cpp">
+      <Filter>Source Files\Game\Battle</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Classes\Camera\Camera.cpp">
+      <Filter>Source Files\Game\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Classes\Layer\Layer.cpp">
+      <Filter>Source Files\Game\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Classes\Message\Message.cpp">
+      <Filter>Source Files\Game\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Classes\NPC\NPC.cpp">
+      <Filter>Source Files\Game\NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Classes\Red\Red.cpp">
+      <Filter>Source Files\Game\Red</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Classes\Sprite\Sprite_Class.cpp">
+      <Filter>Source Files\Game\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Engine\Debug\Debug.cpp">
+      <Filter>Source Files\Engine\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Engine\EventHandler\EventHandler.cpp">
+      <Filter>Source Files\Engine\EventHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Engine\FPS\FPS.cpp">
+      <Filter>Source Files\Engine\FPS</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Engine\Graphics\Graphics.cpp">
+      <Filter>Source Files\Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Engine\Loops\Loop\Loop.cpp">
+      <Filter>Source Files\Engine\Loop</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Engine\Sound\Sound.cpp">
+      <Filter>Source Files\Engine\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Engine\Text\Text.cpp">
+      <Filter>Source Files\Engine\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Engine\TextIn\TextIn.cpp">
+      <Filter>Source Files\Engine\TextIn</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Project\Classes\Define.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Classes\Main Loop.h">
+      <Filter>Source Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Engine\Loops\Loops.h">
+      <Filter>Source Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Classes\Battle\Battle.h">
+      <Filter>Source Files\Game\Battle</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Classes\Camera\Camera.h">
+      <Filter>Source Files\Game\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Classes\Layer\Layer.h">
+      <Filter>Source Files\Game\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Classes\Message\Message.h">
+      <Filter>Source Files\Game\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Classes\NPC\NPC.h">
+      <Filter>Source Files\Game\NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Classes\Red\Red.h">
+      <Filter>Source Files\Game\Red</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Classes\Sprite\Sprite_Class.h">
+      <Filter>Source Files\Game\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Engine\Debug\Debug.h">
+      <Filter>Source Files\Engine\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Engine\EventHandler\EventHandler.h">
+      <Filter>Source Files\Engine\EventHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Engine\FPS\FPS.h">
+      <Filter>Source Files\Engine\FPS</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Engine\Graphics\Graphics.h">
+      <Filter>Source Files\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Engine\Loops\Loop\Loop.h">
+      <Filter>Source Files\Engine\Loop</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Engine\Sound\Sound.h">
+      <Filter>Source Files\Engine\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Engine\Text\Text.h">
+      <Filter>Source Files\Engine\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Engine\TextIn\TextIn.h">
+      <Filter>Source Files\Engine\TextIn</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
