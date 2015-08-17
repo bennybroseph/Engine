@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Tilemaker" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="Game\;Engine\;Tilemaker\;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Tilemaker" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Tilemaker" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/include/SDL" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/include/GL" />
+		</Compiler>
+		<Linker>
+			<Add option="-lmingw32 -lSDL2Main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf" />
+			<Add option="-lopengl32 -lglu32 -lglew32" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/lib" />
+		</Linker>
+		<Unit filename="../Classes/Battle/Battle.cpp">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Classes/Battle/Battle.h">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Classes/Camera/Camera.cpp">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Classes/Camera/Camera.h">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Classes/Define.h">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Classes/Layer/Layer.cpp">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Classes/Layer/Layer.h">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Classes/Main Loop.cpp">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Classes/Main Loop.h">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Classes/Message/Message.cpp">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Classes/Message/Message.h">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Classes/NPC/NPC.cpp">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Classes/NPC/NPC.h">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Classes/Red/Red.cpp">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Classes/Red/Red.h">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Classes/Sprite/Sprite_Class.cpp">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Classes/Sprite/Sprite_Class.h">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Engine/Debug/Debug.cpp">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="../Engine/Debug/Debug.h">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="../Engine/EventHandler/EventHandler.cpp">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="../Engine/EventHandler/EventHandler.h">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="../Engine/FPS/FPS.cpp">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="../Engine/FPS/FPS.h">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="../Engine/Graphics/Graphics.cpp">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="../Engine/Graphics/Graphics.h">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="../Engine/Loops/Loop/Loop.cpp">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="../Engine/Loops/Loop/Loop.h">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="../Engine/Loops/Loops.cpp">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Engine/Loops/Loops.h">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="../Engine/Sound/Sound.cpp">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="../Engine/Sound/Sound.h">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="../Engine/TextIn/TextIn.cpp">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="../Engine/TextIn/TextIn.h">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="../Engine/Text/Text.cpp">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="../Engine/Text/Text.h">
+			<Option virtualFolder="Engine/" />
+		</Unit>
+		<Unit filename="Tilemaker/Layer.cpp">
+			<Option virtualFolder="Tilemaker/" />
+		</Unit>
+		<Unit filename="Tilemaker/Layer.h">
+			<Option virtualFolder="Tilemaker/" />
+		</Unit>
+		<Unit filename="Tilemaker/Loop.cpp">
+			<Option virtualFolder="Tilemaker/" />
+		</Unit>
+		<Unit filename="Tilemaker/Loop.h">
+			<Option virtualFolder="Tilemaker/" />
+		</Unit>
+		<Unit filename="Tilemaker/Loops.cpp">
+			<Option virtualFolder="Tilemaker/" />
+		</Unit>
+		<Unit filename="Tilemaker/Loops.h">
+			<Option virtualFolder="Tilemaker/" />
+		</Unit>
+		<Unit filename="Tilemaker/Main Loop.cpp">
+			<Option virtualFolder="Tilemaker/" />
+		</Unit>
+		<Unit filename="Tilemaker/Main Loop.h">
+			<Option virtualFolder="Tilemaker/" />
+		</Unit>
+		<Unit filename="main.cpp">
+			<Option virtualFolder="Tilemaker/" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

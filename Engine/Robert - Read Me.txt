@@ -1,0 +1,9 @@
+So this is the OpenGL/SDL project I've had for quite some time. I recently switched it to SDL 2.0, and everything is working just like it was before.
+
+I have 2 exe's in here, one is the overworld movement part, and the other is the terrible battle system that I've only just started to program. The 'Z' button on the keyboard is currently the GameBoy's 'A' button for that mode. You can take a look at both, but really the overworld is the only one that's completed.
+
+The NPC runs on a timer, and will not run into you, nor will he run into buildings and such. I know in the original game the NPCs would actually skip a movement command if they can't move in the random direction they chose, but in this one, they just look for another one. It's not efficent I'm sure, but the chances that they will get the same incorrect movement for more than a loop or two is very unlikely. If you were to somehow trap them in a completely boxed in area, I'm sure the game would hang indefinitly, but there isn't a way to do this thankfully.
+
+Movement and collision is based on a mask layer. It'll probably make more sense if you look at the folder 'Tilemaker' since there a program there that I made specifically to edit the tilemap in this game with a GUI. It'll display the mask in colors since normally it's invisible.
+
+If you have any problems, or need me to explain anything, just let me know since only a text file is probably not very helpful.

@@ -1,0 +1,9 @@
+This project feeds off of the original engine in the located in the parent folder. Both this program, and the 'Pokemon Red' one use the same OpenGL/SDL engine. 
+
+This is a program I made to easily create the tilemap for the 'Pokemon Red' project. It reads and stores information from the text files located in the 'Maps' folder. Changes are only applied after the program sucessfully exits. If you alt f4, it won't save. You can imagine why I left it this way.
+
+Even though it was made for my project, a few changes could be made to support any tile size. Even without changes to the code, you can already use any image you want for the tileset and the program will resize itself to an extent(height only at the moment) and use that image instead for humourous results as long as the image is named 'Overworld.png' and is in the 'Images' folder.
+
+If you're wondering what the buttons are, and what they do the arrows are for moving the current layer in any direction, and the check box is a 'select all' button. With the arrow checked, ALL actions are applied to ALL layers including single tile edits. So you can move the entire map over one tile, or clear an entire tile from the backgroup, foreground, and mask.
+
+Just run the 'RUN ME' exe like last time. Should work fine, but let me know if it doesn't.

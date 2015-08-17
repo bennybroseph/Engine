@@ -1,0 +1,4 @@
+3 
+Maps/Pallet_Town/background.txt Images/Overworld.png 
+Maps/Pallet_Town/overworld.txt Images/Overworld.png 
+Maps/Pallet_Town/mask.txt Images/Masks.png
