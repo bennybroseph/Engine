@@ -35,7 +35,7 @@ namespace Text
     {
         char buffer[256];
 
-        sprintf(buffer,"%d",text);Debug::Log("Buffer Complete");
+        sprintf_s(buffer,"%d",text);Debug::Log("Buffer Complete");
         Print(Font, x, y, align, buffer);
     }
 

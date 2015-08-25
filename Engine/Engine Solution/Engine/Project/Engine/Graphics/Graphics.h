@@ -5,7 +5,7 @@
 #include <SDL_image.h>
 #include <glew.h>
 #include <SDL_opengl.h>
-#include <glu.h>
+#include <glut.h>
 #include <glext.h>
 #include <stdio.h>
 #include <string>

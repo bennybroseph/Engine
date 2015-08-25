@@ -8,8 +8,9 @@ namespace Loops
         SDL_Init(SDL_INIT_EVERYTHING);
         atexit(SDL_Quit);
 
-        freopen("CON","w",stdout);
-        freopen("CON","w",stderr);
+		FILE* stream;
+		freopen_s(&stream, "CON", "w", stdout);
+		freopen_s(&stream, "CON", "w", stderr);
 
         Graphics::Init(160,144,3,false);
         Text::Init();

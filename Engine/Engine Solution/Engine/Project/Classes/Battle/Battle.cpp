@@ -193,13 +193,13 @@ namespace Battle_System
                 case 5:
                     if(Player[0]->current_health == 0)
                     {
-                        sprintf(buffer,"%s has fainted!",Player[0]->nickname.c_str());
+                        sprintf_s(buffer,"%s has fainted!",Player[0]->nickname.c_str());
                         skip = 4;
                     }
 
                     else if(Enemy[0]->current_health == 0)
                     {
-                        sprintf(buffer,"%s has fainted!",Enemy[0]->nickname.c_str());
+                        sprintf_s(buffer,"%s has fainted!",Enemy[0]->nickname.c_str());
                         skip = 4;
                     }
 
@@ -217,16 +217,16 @@ namespace Battle_System
                 case 7:
                     if(Player[0]->current_health == 0)
                     {
-                        sprintf(buffer,"%s has fainted!",Player[0]->nickname.c_str());
+                        sprintf_s(buffer,"%s has fainted!",Player[0]->nickname.c_str());
                     }
 
                     else if(Enemy[0]->current_health == 0)
                     {
-                        sprintf(buffer,"%s has fainted!",Enemy[0]->nickname.c_str());
+                        sprintf_s(buffer,"%s has fainted!",Enemy[0]->nickname.c_str());
                     }
                 break;
 
-                default: sprintf(buffer,"%s","Coming soon...");
+                default: sprintf_s(buffer,"%s","Coming soon...");
                     break;
             }
             if(Player[0]->current_health < 0)Player[0]->current_health = 0;
@@ -236,7 +236,7 @@ namespace Battle_System
 
     void Battle_Frame(Pokemon_Class* Main, Pokemon_Class* Other)
     {
-        sprintf(buffer,"%s used %s.",Main->nickname.c_str(),Main->attacks[selection_num].attack_name.c_str());
+        sprintf_s(buffer,"%s used %s.",Main->nickname.c_str(),Main->attacks[selection_num].attack_name.c_str());
         switch(Main->attacks[selection_num].stat)
         {
             case 1:
@@ -481,17 +481,17 @@ namespace Battle_System
         if(i_flag)
         {
             char temp[255];
-            sprintf(temp,"%s",buffer);
+            sprintf_s(temp,"%s",buffer);
 
             Graphics::Draw_Image(Info,0,0);
-            sprintf(buffer,"Attack: %d / %d",int(Player[0]->attack.temp),int(Player[0]->attack.max));
+            sprintf_s(buffer,"Attack: %d / %d",int(Player[0]->attack.temp),int(Player[0]->attack.max));
             Text::Print(Text::Pokemon_Normal,10,15,false,buffer);
-            sprintf(buffer,"Defense: %d / %d",int(Player[0]->defense.temp),int(Player[0]->defense.max));
+            sprintf_s(buffer,"Defense: %d / %d",int(Player[0]->defense.temp),int(Player[0]->defense.max));
             Text::Print(Text::Pokemon_Normal,10,24,false,buffer);
-            sprintf(buffer,"Enemy HP: %d / %d",int(Enemy[0]->current_health),int(Enemy[0]->max_health));
+            sprintf_s(buffer,"Enemy HP: %d / %d",int(Enemy[0]->current_health),int(Enemy[0]->max_health));
             Text::Print(Text::Pokemon_Normal,10,33,false,buffer);
 
-            sprintf(buffer,"%s",temp);
+            sprintf_s(buffer,"%s",temp);
         }
     }
 

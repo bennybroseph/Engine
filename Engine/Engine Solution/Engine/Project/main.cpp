@@ -1,10 +1,11 @@
 ///////////////////////////////////////////////////////
-//SDL Engine 1.0
+//SDL Engine 3.x
 ///////////////////////////////////////////////////////
-//Developed by Ben Privat
+//Originlly Developed by Ben Privat
 //Erik Istre "of Doom"
 //Nick Clardy
 //Tobey "Green Goblin" Osborne
+//Ben Odom
 //
 //Spring 2009
 //
@@ -13,13 +14,12 @@
 
 #include "Engine/Loops/Loops.h"
 
-int main(int argc, char *argv[])
+int wmain(int argc, char *argv[])
 {
     Loops::Setup();
     Debug::Log("Onto Quit()");
     Loops::Quit();
     Debug::Log("Exited successfully");
-
+	
     return 0;
-
 } //End of Main

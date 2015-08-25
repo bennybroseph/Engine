@@ -27,7 +27,7 @@ void Loop::Run()
         if(FPS::GFPS()){Draw(); Graphics::Flip();}
         //Draw(); Graphics::Flip();
 
-        sprintf(buffer,"%f:%f",FPS::Current_FPS,FPS::Current_GFPS);
+        sprintf_s(buffer,"%f:%f",FPS::Current_FPS,FPS::Current_GFPS);
         //std::cout << buffer << "\n";
 
         //CPU saver

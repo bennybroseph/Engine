@@ -3,15 +3,16 @@
 Layer_Class::Layer_Class(){}
 Layer_Class::Layer_Class(std::string tilemap_file,std::string image_file)
 {
-    FILE* tilemap = fopen(tilemap_file.c_str(),"r");
+	FILE* tilemap; 
+	fopen_s(&tilemap, tilemap_file.c_str(), "r");
 
     for(int i=0;i<COLLUM;i++)
     {
         for(int f=0;f<ROW;f++)
         {
-            fscanf(tilemap,"%d:%d  ",&Tilemap[i][f].row,&Tilemap[i][f].collum);
+			fscanf_s(tilemap, "%d:%d  ", &Tilemap[i][f].row, &Tilemap[i][f].collum);
         }
-        fscanf(tilemap,"\n");
+        fscanf_s(tilemap,"\n");
     }
     fclose(tilemap);
 
