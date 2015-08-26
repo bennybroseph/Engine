@@ -13,6 +13,13 @@ namespace Text
         SDL_Color color;
 
         GLSurface Surface;
+
+		struct Glyph
+		{
+			int minx, maxx, miny, maxy, advance;
+		};
+
+		Glyph Char[256];
     };
 
     void Init();

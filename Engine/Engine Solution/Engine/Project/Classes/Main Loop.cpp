@@ -109,7 +109,7 @@ void Main_Loop_Class::Draw()
         }
     }
 
-//    Battle_System::Draw();
+    //Battle_System::Draw();
 
     //Graphics::Draw_Image(Mouse_Image,cursor_x-15/2,cursor_y-15/2);
 }

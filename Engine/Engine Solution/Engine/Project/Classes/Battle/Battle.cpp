@@ -193,13 +193,13 @@ namespace Battle_System
                 case 5:
                     if(Player[0]->current_health == 0)
                     {
-                        sprintf_s(buffer,"%s has fainted!",Player[0]->nickname.c_str());
+                        sprintf_s(buffer,"%s has \nfainted!",Player[0]->nickname.c_str());
                         skip = 4;
                     }
 
                     else if(Enemy[0]->current_health == 0)
                     {
-                        sprintf_s(buffer,"%s has fainted!",Enemy[0]->nickname.c_str());
+                        sprintf_s(buffer,"%s has \nfainted!",Enemy[0]->nickname.c_str());
                         skip = 4;
                     }
 
@@ -217,12 +217,12 @@ namespace Battle_System
                 case 7:
                     if(Player[0]->current_health == 0)
                     {
-                        sprintf_s(buffer,"%s has fainted!",Player[0]->nickname.c_str());
+                        sprintf_s(buffer,"%s has \nfainted!",Player[0]->nickname.c_str());
                     }
 
                     else if(Enemy[0]->current_health == 0)
                     {
-                        sprintf_s(buffer,"%s has fainted!",Enemy[0]->nickname.c_str());
+                        sprintf_s(buffer,"%s has \nfainted!",Enemy[0]->nickname.c_str());
                     }
                 break;
 
@@ -236,7 +236,7 @@ namespace Battle_System
 
     void Battle_Frame(Pokemon_Class* Main, Pokemon_Class* Other)
     {
-        sprintf_s(buffer,"%s used %s.",Main->nickname.c_str(),Main->attacks[selection_num].attack_name.c_str());
+        sprintf_s(buffer,"%s used \n%s.",Main->nickname.c_str(),Main->attacks[selection_num].attack_name.c_str());
         switch(Main->attacks[selection_num].stat)
         {
             case 1:

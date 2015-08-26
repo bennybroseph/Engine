@@ -10,25 +10,52 @@ namespace Text
         TTF_Init();
 
         Pokemon_Normal.color = {0, 0, 0, 0};
+
+		Pokemon_Normal.font = TTF_OpenFont("Fonts/PokemonRed.ttf", 16);
+		if (Pokemon_Normal.font == NULL)
+			printf("failure to load");
+
+		int i;
+		for (i = 0; i < 256; i++)
+		{
+			if (TTF_GlyphMetrics(Pokemon_Normal.font, i,
+				&Pokemon_Normal.Char[i].minx, &Pokemon_Normal.Char[i].maxx, &Pokemon_Normal.Char[i].miny, &Pokemon_Normal.Char[i].maxy,
+				&Pokemon_Normal.Char[i].advance) == -1)
+				printf("%s\n", TTF_GetError());
+		}
     }
 
     void Print(Font_Type Font, int x, int y, bool align, const char* text)
     {
         SDL_Surface* image;
+		std::vector<std::string> lines;
 
-        Pokemon_Normal.font = TTF_OpenFont("Fonts/PokemonRed.ttf", 16);
-        if(Pokemon_Normal.font == NULL)
-            printf("failure to load");
+		char hold[256];
+		strcpy_s(hold, "");
+
+		const char* i;
+		if ((i = strchr(text, 10)) !=NULL)
+		{
+			strncat_s(hold, text, int(i - text));
+			lines.push_back(hold);
+			strcpy_s(hold, i + 1);
+			lines.push_back(hold);
+		}
+		else
+		{
+			lines.push_back(text);
+		}
 
         // Write text to surface
-        image = TTF_RenderText_Blended(Pokemon_Normal.font, text, Pokemon_Normal.color);Debug::Log("Surface Complete");
+		int j;
+		for (j = 0; j < lines.size(); j++)
+		{
+			image = TTF_RenderText_Blended(Pokemon_Normal.font, lines[j].c_str(), Pokemon_Normal.color);
 
-        Pokemon_Normal.Surface = Graphics::Load_Image(image);Debug::Log("Load Complete");
+			Pokemon_Normal.Surface = Graphics::Load_Image(image);
 
-        //SDL_FreeSurface(image);Debug::Log("Free Complete");
-        TTF_CloseFont(Pokemon_Normal.font);Debug::Log("Render Complete");
-
-        Graphics::Draw_Image(Pokemon_Normal.Surface, x - (align)*(Pokemon_Normal.Surface.w), y - (Pokemon_Normal.Surface.h - 2));
+			Graphics::Draw_Image(Pokemon_Normal.Surface, x - (align)*(Pokemon_Normal.Surface.w), (y+(j*15)) - (Pokemon_Normal.Surface.h - 2));
+		}
     }
 
     void Print(Font_Type Font, int x, int y, bool align, int text)
@@ -41,6 +68,7 @@ namespace Text
 
     void Quit()
     {
-
+		//SDL_FreeSurface(image);Debug::Log("Free Complete");
+		TTF_CloseFont(Pokemon_Normal.font); Debug::Log("Render Complete");
     }
 }
