@@ -11,39 +11,40 @@
 #include "../Engine/Graphics/Graphics.h"
 #include <vector>
 
-namespace Loops{ class Main_Loop_Class: public Loop
-{
-    public:
+namespace Loops {
+	class Main_Loop_Class : public Loop
+	{
+	public:
 
-        Main_Loop_Class();
-        ~Main_Loop_Class();
+		Main_Loop_Class();
+		~Main_Loop_Class();
 
-        void OnKeyDown(SDL_Keycode, Uint16, SDL_Scancode);
-        void OnKeyUp(SDL_Keycode, Uint16, SDL_Scancode);
+		void OnKeyDown(SDL_Keycode, Uint16, SDL_Scancode);
+		void OnKeyUp(SDL_Keycode, Uint16, SDL_Scancode);
 
-        void OnMouseMove(int, int, int, int, bool, bool, bool);
-        void OnLButtonDown(int, int);
-        void OnRButtonDown(int, int);
-        void OnResize(int, int);
+		void OnMouseMove(int, int, int, int, bool, bool, bool);
+		void OnLButtonDown(int, int);
+		void OnRButtonDown(int, int);
+		void OnResize(int, int);
 
-        void Update();
-        void Draw();
-        void ReLoad_Textures();
+		void Update();
+		void Draw();
+		void ReLoad_Textures();
 
-    private:
+	private:
 
-        GLSurface Mouse_Image;
-        GLSurface Background;
+		GLSurface Mouse_Image;
+		GLSurface Background;
 
-        std::vector<Layer_Class*> Layer;
-        std::vector<Pokemon_Class*> Red_Pokemon;
-        std::vector<Pokemon_Class*> Enemy_Pokemon;
+		std::vector<Layer_Class*> Layer;
+		std::vector<Pokemon_Class*> Red_Pokemon;
+		std::vector<Pokemon_Class*> Enemy_Pokemon;
 
-        Red_Class Red;
-        std::vector<NPC*> Dude;
+		Red_Class Red;
+		std::vector<NPC*> Dude;
 
-        int cursor_x,cursor_y;
-};
+		int cursor_x, cursor_y;
+	};
 }
 
 #endif // MAIN_LOOP_H_INCLUDED
