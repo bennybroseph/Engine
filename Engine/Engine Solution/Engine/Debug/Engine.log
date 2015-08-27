@@ -1,44 +1,45 @@
-﻿Build started 8/26/2015 11:44:39 AM.
-     1>Project "C:\Users\benjamin.odom\Documents\GitHub\Engine\Engine\Engine Solution\Engine\Engine.vcxproj" on node 2 (Build target(s)).
+﻿Build started 8/27/2015 11:19:31 AM.
+     1>Project "C:\Users\Womb-Raider\Documents\GitHub\Engine\Engine\Engine Solution\Engine\Engine.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /IC:\SDL\include /IC:\OpenGL\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt "Project\Classes\Main Loop.cpp" Project\Engine\Text\Text.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /IC:\SDL\include /IC:\OpenGL\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Project\Classes\Battle\Battle.cpp Project\Classes\Camera\Camera.cpp Project\Classes\Layer\Layer.cpp "Project\Classes\Main Loop.cpp" Project\Classes\Message\Message.cpp Project\Classes\NPC\NPC.cpp Project\Classes\Red\Red.cpp Project\Classes\Sprite\Sprite_Class.cpp Project\Engine\Debug\Debug.cpp Project\Engine\EventHandler\EventHandler.cpp Project\Engine\FPS\FPS.cpp Project\Engine\Graphics\Graphics.cpp Project\Engine\Loops\Loops.cpp Project\Engine\Loops\Loop\Loop.cpp Project\Engine\Sound\Sound.cpp Project\Engine\TextIn\TextIn.cpp Project\Engine\Text\Text.cpp Project\main.cpp
+         main.cpp
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\graphics\graphics.h(6): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
          Text.cpp
-     1>c:\users\benjamin.odom\documents\github\engine\engine\engine solution\engine\project\engine\text\text.cpp(51): warning C4018: '<': signed/unsigned mismatch
-     1>c:\users\benjamin.odom\documents\github\engine\engine\engine solution\engine\project\engine\text\text.cpp(57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\graphics\graphics.h(6): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+         TextIn.cpp
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\graphics\graphics.h(6): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+         Sound.cpp
+         Loop.cpp
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\graphics\graphics.h(6): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+         Loops.cpp
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\graphics\graphics.h(6): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+         Graphics.cpp
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\graphics\graphics.h(6): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+         FPS.cpp
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\fps\fps.cpp(24): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\fps\fps.cpp(25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\fps\fps.cpp(34): warning C4244: '=': conversion from 'clock_t' to 'float', possible loss of data
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\fps\fps.cpp(52): warning C4244: '=': conversion from 'clock_t' to 'float', possible loss of data
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\fps\fps.cpp(59): warning C4244: '=': conversion from 'clock_t' to 'float', possible loss of data
+         EventHandler.cpp
+         Debug.cpp
+         Sprite_Class.cpp
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\graphics\graphics.h(6): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+         Red.cpp
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\graphics\graphics.h(6): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+         NPC.cpp
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\graphics\graphics.h(6): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+         Message.cpp
          Main Loop.cpp
-     1>c:\users\benjamin.odom\documents\github\engine\engine\engine solution\engine\project\classes\main loop.cpp(61): warning C4018: '<': signed/unsigned mismatch
-     1>c:\users\benjamin.odom\documents\github\engine\engine\engine solution\engine\project\classes\main loop.cpp(68): warning C4018: '<': signed/unsigned mismatch
-     1>c:\users\benjamin.odom\documents\github\engine\engine\engine solution\engine\project\classes\main loop.cpp(72): warning C4018: '<': signed/unsigned mismatch
-     1>c:\users\benjamin.odom\documents\github\engine\engine\engine solution\engine\project\classes\main loop.cpp(83): warning C4018: '<': signed/unsigned mismatch
-     1>c:\users\benjamin.odom\documents\github\engine\engine\engine solution\engine\project\classes\main loop.cpp(95): warning C4018: '<': signed/unsigned mismatch
-     1>c:\users\benjamin.odom\documents\github\engine\engine\engine solution\engine\project\classes\main loop.cpp(97): warning C4244: 'initializing': conversion from 'float' to 'short', possible loss of data
-     1>c:\users\benjamin.odom\documents\github\engine\engine\engine solution\engine\project\classes\main loop.cpp(99): warning C4244: 'initializing': conversion from 'float' to 'short', possible loss of data
-     1>c:\users\benjamin.odom\documents\github\engine\engine\engine solution\engine\project\classes\main loop.cpp(101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-     1>c:\users\benjamin.odom\documents\github\engine\engine\engine solution\engine\project\classes\main loop.cpp(104): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-     1>c:\users\benjamin.odom\documents\github\engine\engine\engine solution\engine\project\classes\main loop.cpp(106): warning C4018: '<': signed/unsigned mismatch
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\graphics\graphics.h(6): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+         Layer.cpp
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\graphics\graphics.h(6): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
+         Camera.cpp
+         Battle.cpp
+     1>c:\users\womb-raider\documents\github\engine\engine\engine solution\engine\project\engine\graphics\graphics.h(6): fatal error C1083: Cannot open include file: 'glew.h': No such file or directory
          Generating Code...
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\benjamin.odom\Documents\GitHub\Engine\Engine\Engine Solution\Debug\Engine.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\SDL\lib /LIBPATH:C:\OpenGL\lib SDL2.lib SDL2main.lib SDL2_image.lib SDL2_mixer.lib SDL2_ttf.lib glew32.lib glew32s.lib freeglut.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\benjamin.odom\Documents\GitHub\Engine\Engine\Engine Solution\Debug\Engine.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\benjamin.odom\Documents\GitHub\Engine\Engine\Engine Solution\Debug\Engine.lib" /MACHINE:X86 Debug\Battle.obj
-         Debug\Camera.obj
-         Debug\Layer.obj
-         "Debug\Main Loop.obj"
-         Debug\Message.obj
-         Debug\NPC.obj
-         Debug\Red.obj
-         Debug\Sprite_Class.obj
-         Debug\Debug.obj
-         Debug\EventHandler.obj
-         Debug\FPS.obj
-         Debug\Graphics.obj
-         Debug\Loops.obj
-         Debug\Loop.obj
-         Debug\Sound.obj
-         Debug\TextIn.obj
-         Debug\Text.obj
-         Debug\main.obj
-         Engine.vcxproj -> C:\Users\benjamin.odom\Documents\GitHub\Engine\Engine\Engine Solution\Debug\Engine.exe
-     1>Done Building Project "C:\Users\benjamin.odom\Documents\GitHub\Engine\Engine\Engine Solution\Engine\Engine.vcxproj" (Build target(s)).
+     1>Done Building Project "C:\Users\Womb-Raider\Documents\GitHub\Engine\Engine\Engine Solution\Engine\Engine.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:01.59
+Time Elapsed 00:00:03.85
