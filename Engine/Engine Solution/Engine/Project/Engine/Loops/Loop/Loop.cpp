@@ -24,15 +24,14 @@ void Loop::Run()
         Update();
 
         //Calls the redefined Draw function for the class
-        if(FPS::GFPS()){Draw(); Graphics::Flip();}
-        //Draw(); Graphics::Flip();
-
-        sprintf_s(buffer,"%f:%f",FPS::Current_FPS,FPS::Current_GFPS);
-        //std::cout << buffer << "\n";
-
+        Draw(); 
+		Graphics::Flip();
+		
+		FPS::Update();
+		FPS::GetFPS();
         //CPU saver
-        SDL_Delay(FPS::Delay);
-        FPS::FPS_Cap();
+        //SDL_Delay(FPS::Delay);
+        //FPS::FPS_Cap();
     }
 
     Debug::Log("Exit Loop");

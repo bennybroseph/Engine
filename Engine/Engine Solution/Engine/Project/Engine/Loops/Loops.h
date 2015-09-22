@@ -11,7 +11,7 @@
 #include "../TextIn/TextIn.h"
 #include "../Graphics/Graphics.h"
 #include "../FPS/FPS.h"
-#include "../../Classes/Main Loop.h"
+#include "../../Classes/MainLoop.h"
 
 /////////////////////////////////////////////////////////////////////////////
 //Namespace Loops

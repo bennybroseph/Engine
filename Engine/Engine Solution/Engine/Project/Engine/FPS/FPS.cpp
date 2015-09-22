@@ -1,70 +1,67 @@
 #include "FPS.h"
 
+const unsigned int ONE_SECOND = 1000; // Literally a second worth of milliseconds
+
+const unsigned int MAX_PREV_FPS = 10; // The amount of previous FPS that will be stored into 'liPreviousFrames'
+
 namespace FPS
 {
-    float Delay = 0;
-    float SpeedFactor = 0;
+	int iMaxFrames; // Maximum FPS as set in 'Init'
 
-    float Current_FPS;
-    float Current_GFPS;
+	float fCurrentFPS; // Current FPS
 
-    int FPS_Max;
-    int GFPS_Max;
+	int iCurrentTime, iOldTime; // The current system time and the system time at the last call of 'Update'
 
-    int Old_Time = clock();
-    int Old_GTime = clock();
+	int iFramesCounter; // How many frames have gone by this 1000 milliseconds
 
-    int Last_Frame = clock();
-    int Last_GFrame = clock();
+	std::list<int> liPreviousFrames; // The past 10 FPS
 
-    short counter[2];
+	void Init(const int ac_iMaxFPS)
+	{
+		iMaxFrames = ac_iMaxFPS;
 
-    void Init(float FPS_Max_Pass,float GFPS_Max_Pass)
-    {
-        FPS_Max = FPS_Max_Pass;
-        GFPS_Max = GFPS_Max_Pass;
-    }
+		iOldTime = clock();
+		iOldTime = clock();
 
-    bool GFPS()
-    {
-        if(((clock() - Last_Frame) + Delay <= 1000/FPS_Max)&&((clock() - Last_GFrame) + Delay >= 1000/GFPS_Max))
-        {
-            if (clock() - Old_GTime >= 1000)
-            {
-                Current_GFPS = counter[1]+(((1000 + Old_GTime) - Last_GFrame)/(clock() - Last_GFrame))-1;
-                Old_GTime = clock();
+		iCurrentTime = clock();
+		iCurrentTime = clock();
+	}
 
-                counter[1] = 0;
-            }
-            else counter[1] ++;
+	void Update()
+	{
 
-            Last_GFrame = clock();
-            return 1;
-        }
+		iCurrentTime = clock();
 
-        return 0;
-    }
+		if (iCurrentTime - iOldTime >= ONE_SECOND)
+		{
+			liPreviousFrames.push_back(iFramesCounter);
+			if (liPreviousFrames.size() > MAX_PREV_FPS)
+				liPreviousFrames.pop_front();
 
-    void FPS_Cap()
-    {
-        if (clock() - Old_Time >= 1000)
-        {
-            Current_FPS = counter[0]+(((1000 + Old_Time) - Last_Frame)/(clock() - Last_Frame))-1;
-            Old_Time = clock();
+			iOldTime = clock();
 
-            counter[0] = 0;
-        }
-        else counter[0] ++;
+			iFramesCounter = 0;
+		}
+		else ++iFramesCounter;
 
-        SpeedFactor = (clock() - Last_Frame)*FPS_Max;
+	}
 
-        Delay += (1000/FPS_Max)-(SpeedFactor/FPS_Max);
+	float GetFPS()
+	{
+		float fFPS = 0; // The holder for the return value
 
-        if(Delay < 0)Delay = 0;
+		for (
+			std::list<int>::iterator iter = liPreviousFrames.begin();
+			iter != liPreviousFrames.end();
+			++iter) // Creates an iterator 'iter' and loops until 'iter' is equal to the end of the list
+			fFPS += *iter;
 
-        Last_Frame = clock();
+		return ceil(fFPS / liPreviousFrames.size()); // The total of all values in the list divided by it's size, then ceilinged (is that even a word) to round it off to the highest value.
+	}
 
-        //std::cout << Current_FPS << "/" << Current_GFPS << std::endl;
-    }
+	void Quit()
+	{
+
+	}
 }
 

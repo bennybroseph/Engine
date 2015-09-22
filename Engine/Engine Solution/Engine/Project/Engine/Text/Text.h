@@ -1,5 +1,5 @@
-#ifndef TEXT_H_INCLUDED
-#define TEXT_H_INCLUDED
+#ifndef _TEXT_H_
+#define _TEXT_H_
 
 #include <SDL_ttf.h>
 #include "../../Classes/Define.h"
@@ -9,17 +9,19 @@ namespace Text
 {
     struct Font_Type
     {
-        TTF_Font* font;
-        SDL_Color color;
+        TTF_Font* m_ttfFont;
+        SDL_Color m_sdlColor;
 
-        GLSurface Surface;
+        GLSurface m_glSurface;
 
 		struct Glyph
 		{
-			int minx, maxx, miny, maxy, advance;
+			int iMinX, iMaxX;
+			int iMinY, iMaxY;
+			int iAdvance;
 		};
 
-		Glyph Char[256];
+		Glyph m_aoChar[256];
     };
 
     void Init();
@@ -31,4 +33,4 @@ namespace Text
     extern Font_Type Pokemon_Normal;
 }
 
-#endif  //TEXT_H_INCLUDED
+#endif  //_TEXT_H_

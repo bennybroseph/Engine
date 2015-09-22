@@ -15,14 +15,14 @@ namespace Loops
         Graphics::Init(160,144,3,false);
         Text::Init();
         Debug::Init();
-        FPS::Init(120,40);
+        FPS::Init(60, 60);
 
         srand((unsigned)time(0));
 
-        Main_Loop_Class Main_Loop;
+        MainLoop oMainLoop;
 
         Debug::Log("Onto Main_Loop.Run()");
-        Main_Loop.Run();
+        oMainLoop.Run();
     }
 
     void Quit()

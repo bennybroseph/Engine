@@ -2,73 +2,71 @@
 
 namespace Text
 {
-    GLuint shader_program_text;
-    Font_Type Pokemon_Normal;
+	Font_Type Pokemon_Normal;
 
-    void Init()
-    {
-        TTF_Init();
+	void Init()
+	{
+		TTF_Init();
 
-        Pokemon_Normal.color = {0, 0, 0, 0};
+		Pokemon_Normal.m_sdlColor = { 0, 0, 0, 0 };
 
-		Pokemon_Normal.font = TTF_OpenFont("Fonts/PokemonRed.ttf", 16);
-		if (Pokemon_Normal.font == NULL)
-			printf("failure to load");
+		Pokemon_Normal.m_ttfFont = TTF_OpenFont("Fonts/PokemonRed.ttf", 16);
+		if (Pokemon_Normal.m_ttfFont == NULL)
+			printf("Failure to load\n");
 
 		int i;
 		for (i = 0; i < 256; i++)
 		{
-			if (TTF_GlyphMetrics(Pokemon_Normal.font, i,
-				&Pokemon_Normal.Char[i].minx, &Pokemon_Normal.Char[i].maxx, &Pokemon_Normal.Char[i].miny, &Pokemon_Normal.Char[i].maxy,
-				&Pokemon_Normal.Char[i].advance) == -1)
+			if (TTF_GlyphMetrics(Pokemon_Normal.m_ttfFont, i,
+				&Pokemon_Normal.m_aoChar[i].iMinX, &Pokemon_Normal.m_aoChar[i].iMaxX, &Pokemon_Normal.m_aoChar[i].iMinY, &Pokemon_Normal.m_aoChar[i].iMaxY,
+				&Pokemon_Normal.m_aoChar[i].iAdvance) == -1)
 				printf("%s\n", TTF_GetError());
 		}
-    }
+	}
 
-    void Print(Font_Type Font, int x, int y, bool align, const char* text)
-    {
-        SDL_Surface* image;
-		std::vector<std::string> lines;
+	void Print(Font_Type Font, int x, int y, bool align, const char* text)
+	{
+		SDL_Surface* sdlSurface;
+		std::vector<std::string> vsLines;
 
-		char hold[256];
-		strcpy_s(hold, "");
+		char szHold[256];
+		strcpy_s(szHold, "");
 
 		const char* i;
-		if ((i = strchr(text, 10)) !=NULL)
+		if ((i = strchr(text, 10)) != NULL)
 		{
-			strncat_s(hold, text, int(i - text));
-			lines.push_back(hold);
-			strcpy_s(hold, i + 1);
-			lines.push_back(hold);
+			strncat_s(szHold, text, int(i - text));
+			vsLines.push_back(szHold);
+			strcpy_s(szHold, i + 1);
+			vsLines.push_back(szHold);
 		}
 		else
 		{
-			lines.push_back(text);
+			vsLines.push_back(text);
 		}
 
-        // Write text to surface
+		// Write text to surface
 		int j;
-		for (j = 0; j < lines.size(); j++)
+		for (j = 0; j < vsLines.size(); j++)
 		{
-			image = TTF_RenderText_Blended(Pokemon_Normal.font, lines[j].c_str(), Pokemon_Normal.color);
+			sdlSurface = TTF_RenderText_Blended(Pokemon_Normal.m_ttfFont, vsLines[j].c_str(), Pokemon_Normal.m_sdlColor);
 
-			Pokemon_Normal.Surface = Graphics::Load_Image(image);
+			Pokemon_Normal.m_glSurface = Graphics::Load_Image(sdlSurface);
 
-			Graphics::Draw_Image(Pokemon_Normal.Surface, x - (align)*(Pokemon_Normal.Surface.w), (y+(j*15)) - (Pokemon_Normal.Surface.h - 2));
+			Graphics::Draw_Image(Pokemon_Normal.m_glSurface, x - (align)*(Pokemon_Normal.m_glSurface.w), (y + (j * 15)) - (Pokemon_Normal.m_glSurface.h - 2));
 		}
-    }
+	}
 
-    void Print(Font_Type Font, int x, int y, bool align, int text)
-    {
-        char buffer[256];
+	void Print(Font_Type Font, int x, int y, bool align, int text)
+	{
+		char buffer[256];
 
-        sprintf_s(buffer,"%d",text);Debug::Log("Buffer Complete");
-        Print(Font, x, y, align, buffer);
-    }
+		sprintf_s(buffer, "%d", text);
+		Print(Font, x, y, align, buffer);
+	}
 
-    void Quit()
-    {
-		//SDL_FreeSurface(image);Debug::Log("Free Complete");
-		TTF_CloseFont(Pokemon_Normal.font); Debug::Log("Render Complete");
-    }
+	void Quit()
+	{
+		TTF_CloseFont(Pokemon_Normal.m_ttfFont); Debug::Log("Text Quit");
+	}
 }

@@ -22,7 +22,7 @@
     <ClCompile Include="Project\Classes\Battle\Battle.cpp" />
     <ClCompile Include="Project\Classes\Camera\Camera.cpp" />
     <ClCompile Include="Project\Classes\Layer\Layer.cpp" />
-    <ClCompile Include="Project\Classes\Main Loop.cpp" />
+    <ClCompile Include="Project\Classes\MainLoop.cpp" />
     <ClCompile Include="Project\Classes\Message\Message.cpp" />
     <ClCompile Include="Project\Classes\NPC\NPC.cpp" />
     <ClCompile Include="Project\Classes\Red\Red.cpp" />
@@ -43,7 +43,7 @@
     <ClInclude Include="Project\Classes\Camera\Camera.h" />
     <ClInclude Include="Project\Classes\Define.h" />
     <ClInclude Include="Project\Classes\Layer\Layer.h" />
-    <ClInclude Include="Project\Classes\Main Loop.h" />
+    <ClInclude Include="Project\Classes\MainLoop.h" />
     <ClInclude Include="Project\Classes\Message\Message.h" />
     <ClInclude Include="Project\Classes\NPC\NPC.h" />
     <ClInclude Include="Project\Classes\Red\Red.h" />
