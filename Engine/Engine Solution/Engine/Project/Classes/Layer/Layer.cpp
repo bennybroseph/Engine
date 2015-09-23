@@ -21,7 +21,7 @@ Layer_Class::Layer_Class(std::string tilemap_file,std::string image_file)
 
 void Layer_Class::Load_Textures(std::string image_file)
 {
-    Tiles = Graphics::Load_Image(image_file.c_str());
+    Tiles = Graphics::LoadSurface(image_file.c_str());
     Water = new Sprite_Class("Images/Water.png",0,3,0,0,16,320);
     Flower = new Sprite_Class("Images/Flower.png",0,3,0,0,16,32,320);
 }

@@ -30,7 +30,7 @@ Pokemon_Class::Pokemon_Class(short Index)
         type1 = "Fire";type2 = "None";
         name = "CHARMANDER";nickname = "CHARMANDER";
 
-        Image = Graphics::Load_Image("Images/Charmander.png");
+        Image = Graphics::LoadSurface("Images/Charmander.png");
 
         attack_num = 0;
 
@@ -88,7 +88,7 @@ Pokemon_Class::Pokemon_Class(short Index)
         type1 = "Water";type2 = "None";
         name = "SQUIRTLE";nickname = "SQUIRTLE";
 
-        Image = Graphics::Load_Image("Images/Squirtle.png");
+        Image = Graphics::LoadSurface("Images/Squirtle.png");
 
         attacks[0].attack_name = "TACKLE";
         attacks[0].pp_max = 35;attacks[0].pp_temp = attacks[0].pp_max;
@@ -117,10 +117,10 @@ void Pokemon_Class::Load_Textures(short Index)
 {
     switch(Index)
     {
-        case 1: Image = Graphics::Load_Image("Images/Charmander.png");
+        case 1: Image = Graphics::LoadSurface("Images/Charmander.png");
         break;
 
-        case 4: Image = Graphics::Load_Image("Images/Squirtle.png");
+        case 4: Image = Graphics::LoadSurface("Images/Squirtle.png");
         break;
 
         default:
@@ -439,57 +439,57 @@ namespace Battle_System
         Graphics::Draw_Rect(96,74,48*(Player[0]->current_health/Player[0]->max_health),4,96/2,96/2,96/2);
         Graphics::Draw_Rect(32,18,48*(Enemy[0]->current_health/Enemy[0]->max_health),4,96/2,96/2,96/2);
 
-        Graphics::Draw_Image(HUD,0,0);
+        Graphics::DrawSurface(HUD,0,0);
 
-        Text::Print(Text::Pokemon_Normal,80,63,false,Player[0]->nickname.c_str());
+        Text::Print(Text::PokemonNormal,80,63,false,Player[0]->nickname.c_str());
 
-        Text::Print(Text::Pokemon_Normal,120,71,false,Player[0]->lvl);
-        Text::Print(Text::Pokemon_Normal,120,87,false,Player[0]->max_health);
-        Text::Print(Text::Pokemon_Normal,113,87,true,Player[0]->current_health);
+        Text::Print(Text::PokemonNormal,120,71,false,Player[0]->lvl);
+        Text::Print(Text::PokemonNormal,120,87,false,Player[0]->max_health);
+        Text::Print(Text::PokemonNormal,113,87,true,Player[0]->current_health);
 
 
 
-        Text::Print(Text::Pokemon_Normal,8,8,false,Enemy[0]->nickname.c_str());
-        Text::Print(Text::Pokemon_Normal,40,15,false,Enemy[0]->lvl);
+        Text::Print(Text::PokemonNormal,8,8,false,Enemy[0]->nickname.c_str());
+        Text::Print(Text::PokemonNormal,40,15,false,Enemy[0]->lvl);
 
-        Graphics::Draw_Image(Player[0]->Image,6,36);
-        Graphics::Draw_Image(Enemy[0]->Image,96,0);
+        Graphics::DrawSurface(Player[0]->Image,6,36);
+        Graphics::DrawSurface(Enemy[0]->Image,96,0);
         switch(menu_num)
         {
-            case 1: Graphics::Draw_Image(Menu_1,0,0);
+            case 1: Graphics::DrawSurface(Menu_1,0,0);
             break;
 
-            case 2: Graphics::Draw_Image(Menu_2,0,0);
+            case 2: Graphics::DrawSurface(Menu_2,0,0);
 
-                    Text::Print(Text::Pokemon_Normal,48,111,false,Player[0]->attacks[0].attack_name.c_str());
-                    Text::Print(Text::Pokemon_Normal,48,119,false,Player[0]->attacks[1].attack_name.c_str());
-                    Text::Print(Text::Pokemon_Normal,48,127,false,Player[0]->attacks[2].attack_name.c_str());
-                    Text::Print(Text::Pokemon_Normal,48,135,false,Player[0]->attacks[3].attack_name.c_str());
+                    Text::Print(Text::PokemonNormal,48,111,false,Player[0]->attacks[0].attack_name.c_str());
+                    Text::Print(Text::PokemonNormal,48,119,false,Player[0]->attacks[1].attack_name.c_str());
+                    Text::Print(Text::PokemonNormal,48,127,false,Player[0]->attacks[2].attack_name.c_str());
+                    Text::Print(Text::PokemonNormal,48,135,false,Player[0]->attacks[3].attack_name.c_str());
 
-                    Text::Print(Text::Pokemon_Normal,16,87,false,Player[0]->attacks[selection_num].type.c_str());
+                    Text::Print(Text::PokemonNormal,16,87,false,Player[0]->attacks[selection_num].type.c_str());
 
-                    Text::Print(Text::Pokemon_Normal,56,95,true,Player[0]->attacks[selection_num].pp_max);
-                    Text::Print(Text::Pokemon_Normal,64,95,false,Player[0]->attacks[selection_num].pp_temp);
+                    Text::Print(Text::PokemonNormal,56,95,true,Player[0]->attacks[selection_num].pp_max);
+                    Text::Print(Text::PokemonNormal,64,95,false,Player[0]->attacks[selection_num].pp_temp);
             break;
 
-            default: Graphics::Draw_Image(Text_Box,0,0);
-                     Text::Print(Text::Pokemon_Normal,10,117,false,buffer);
+            default: Graphics::DrawSurface(Text_Box,0,0);
+                     Text::Print(Text::PokemonNormal,10,117,false,buffer);
                 break;
         }
-        Graphics::Draw_Image(Selector,x,y);
+        Graphics::DrawSurface(Selector,x,y);
 
         if(i_flag)
         {
             char temp[255];
             sprintf_s(temp,"%s",buffer);
 
-            Graphics::Draw_Image(Info,0,0);
+            Graphics::DrawSurface(Info,0,0);
             sprintf_s(buffer,"Attack: %d / %d",int(Player[0]->attack.temp),int(Player[0]->attack.max));
-            Text::Print(Text::Pokemon_Normal,10,15,false,buffer);
+            Text::Print(Text::PokemonNormal,10,15,false,buffer);
             sprintf_s(buffer,"Defense: %d / %d",int(Player[0]->defense.temp),int(Player[0]->defense.max));
-            Text::Print(Text::Pokemon_Normal,10,24,false,buffer);
+            Text::Print(Text::PokemonNormal,10,24,false,buffer);
             sprintf_s(buffer,"Enemy HP: %d / %d",int(Enemy[0]->current_health),int(Enemy[0]->max_health));
-            Text::Print(Text::Pokemon_Normal,10,33,false,buffer);
+            Text::Print(Text::PokemonNormal,10,33,false,buffer);
 
             sprintf_s(buffer,"%s",temp);
         }
@@ -497,11 +497,11 @@ namespace Battle_System
 
     void Load_Textures()
     {
-        HUD = Graphics::Load_Image("Images/HUD.png");
-        Menu_1 = Graphics::Load_Image("Images/Battle_1.png");
-        Menu_2 = Graphics::Load_Image("Images/Battle_2.png");
-        Text_Box = Graphics::Load_Image("Images/Text_Box.png");
-        Selector = Graphics::Load_Image("Images/Selector.png");
-        Info = Graphics::Load_Image("Images/Info_BG.png");
+        HUD = Graphics::LoadSurface("Images/HUD.png");
+        Menu_1 = Graphics::LoadSurface("Images/Battle_1.png");
+        Menu_2 = Graphics::LoadSurface("Images/Battle_2.png");
+        Text_Box = Graphics::LoadSurface("Images/Text_Box.png");
+        Selector = Graphics::LoadSurface("Images/Selector.png");
+        Info = Graphics::LoadSurface("Images/Info_BG.png");
     }
 }

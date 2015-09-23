@@ -12,10 +12,10 @@ namespace Loops
 		freopen_s(&stream, "CON", "w", stdout);
 		freopen_s(&stream, "CON", "w", stderr);
 
-        Graphics::Init(160,144,3,false);
+        Graphics::Init(160,144,1,true);
         Text::Init();
         Debug::Init();
-        FPS::Init(60, 60);
+        FPS::Init(60);
 
         srand((unsigned)time(0));
 

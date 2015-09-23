@@ -22,7 +22,7 @@ namespace Loops
 	}
 	void MainLoop::Draw()
 	{
-		Graphics::Draw_Image(m_glImageBackground, -48, 0);
+		Graphics::DrawSurface(m_glSurfaceBG, 0, 0);
 
 		for (int i = 0; i < m_voTileLayer.size() - 1; i++)
 		{
@@ -30,7 +30,7 @@ namespace Loops
 			{
 				for (int k = Camera::CameraControl.CameraX / TILE_WIDTH; k < (Camera::CameraControl.CameraX / TILE_WIDTH) + 10; k++)
 				{
-					Graphics::Draw_Image(
+					Graphics::DrawSurface(
 						m_voTileLayer[i]->Tiles,
 						(k * TILE_WIDTH) - Camera::CameraControl.CameraX,
 						(j * TILE_HEIGHT) - Camera::CameraControl.CameraY,
@@ -117,11 +117,11 @@ namespace Loops
 		Text::Quit();
 		Text::Init();
 
-		m_glImageBackground = Graphics::Load_Image("Images/background.png");
-		m_glImageMouse = Graphics::Load_Image("Images/cursor.png");
+		m_glSurfaceBG = Graphics::LoadSurface("Images/background.gif");
+		m_glSurfaceMouse = Graphics::LoadSurface("Images/cursor.png");
 
-		m_voTileLayer[0]->Load_Textures("Images/Overworld.png");
-		m_voTileLayer[1]->Load_Textures("Images/Overworld.png");
+		m_voTileLayer[0]->Load_Textures("Images/Overworld_Original.png");
+		m_voTileLayer[1]->Load_Textures("Images/Overworld_Original.png");
 		m_voTileLayer[2]->Load_Textures("Images/Masks.png");
 
 		m_oRed.Load_Textures();
@@ -144,15 +144,15 @@ namespace Loops
 
 	MainLoop::MainLoop()
 	{
-		m_glImageBackground = Graphics::Load_Image("Images/background.png");
-		m_glImageMouse = Graphics::Load_Image("Images/cursor.png"); // Unused...
+		m_glSurfaceBG = Graphics::LoadSurface("Images/background.gif");
+		m_glSurfaceMouse = Graphics::LoadSurface("Images/cursor.png"); // Unused...
 
 		Layer_Class* oTempLayer; // Temporary pointer for the new memory being created
 
 		oTempLayer = new Layer_Class("Maps/Pallet_Town/background.txt", "Images/Overworld.png"); // Loads the background tile set
 		m_voTileLayer.push_back(oTempLayer);
 
-		oTempLayer = new Layer_Class("Maps/Pallet_Town/overworld.txt", "Images/Overworld.png"); // Loads the foreground tile set
+		oTempLayer = new Layer_Class("Maps/Pallet_Town/overworld.txt", "Images/Overworld_Original.png"); // Loads the foreground tile set
 		m_voTileLayer.push_back(oTempLayer);
 
 		oTempLayer = new Layer_Class("Maps/Pallet_Town/mask.txt", "Images/Masks.png"); // Loads the collision mask tile set

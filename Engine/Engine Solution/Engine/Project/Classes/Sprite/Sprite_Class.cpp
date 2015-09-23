@@ -35,7 +35,7 @@ Sprite_Class::Sprite_Class(std::string filename,int start,int end,int row,int co
 }
 void Sprite_Class::Load_Textures(std::string filename)
 {
-    Sprite = Graphics::Load_Image(filename.c_str());
+    Sprite = Graphics::LoadSurface(filename.c_str());
 }
 void Sprite_Class::Animate(std::string Type)
 {
@@ -71,7 +71,7 @@ void Sprite_Class::Move(int new_x,int new_y)
 }
 void Sprite_Class::New(std::string new_file)
 {
-    Sprite = Graphics::Load_Image(new_file.c_str());
+    Sprite = Graphics::LoadSurface(new_file.c_str());
 }
 void Sprite_Class::Change(std::string Type,int new_index,int new_index2,bool set_change,int start,int end)
 {
@@ -101,6 +101,6 @@ void Sprite_Class::Freeze()
 }
 void Sprite_Class::Draw()
 {
-   Graphics::Draw_Image(Sprite,x-Camera::CameraControl.CameraX,y-Camera::CameraControl.CameraY,a_row,a_collum,abs(a_size),abs(c_size));
+   Graphics::DrawSurface(Sprite,x-Camera::CameraControl.CameraX,y-Camera::CameraControl.CameraY,a_row,a_collum,abs(a_size),abs(c_size));
 }
 Sprite_Class::~Sprite_Class(){}

@@ -1,3 +1,10 @@
+/////////////////////////////////////////////////////////////
+// File: Text.h
+// Author: Ben Odom
+// Brief: Holds functionality for drawing text to the screen
+//        using SDL_TTF. Can draw text string and integers.
+//////////////////////////////////////////////////////////////
+
 #ifndef _TEXT_H_
 #define _TEXT_H_
 
@@ -7,12 +14,10 @@
 
 namespace Text
 {
-    struct Font_Type
+    struct FontData
     {
-        TTF_Font* m_ttfFont;
-        SDL_Color m_sdlColor;
-
-        GLSurface m_glSurface;
+        TTF_Font* ttfFont;
+        SDL_Color sdlColor;
 
 		struct Glyph
 		{
@@ -21,16 +26,17 @@ namespace Text
 			int iAdvance;
 		};
 
-		Glyph m_aoChar[256];
+		Glyph aoChar[256];
     };
 
-    void Init();
-    void Quit();
+    bool Init();
+    
+	void Print(const FontData &ac_ttfFont, const int ac_iPosX, const int ac_iPosY, const bool ac_bAlign, const char* ac_szText);
+    void Print(const FontData &ac_ttfFont, const int ac_iPosX, const int ac_iPosY, const bool ac_bAlign, const int ac_iText);    
 
-    void Print(Font_Type, int, int, bool, int);
-    void Print(Font_Type, int, int, bool, const char*);
+	void Quit();
 
-    extern Font_Type Pokemon_Normal;
+    extern FontData PokemonNormal;
 }
 
 #endif  //_TEXT_H_

@@ -48,8 +48,8 @@ namespace Loops
 		~MainLoop();
 
 	private:
-		GLSurface m_glImageMouse; // The mouse cursor's image file
-		GLSurface m_glImageBackground; // The background color
+		GLSurface m_glSurfaceMouse; // The mouse cursor's image file
+		GLSurface m_glSurfaceBG; // The background color
 
 		std::vector<Layer_Class*> m_voTileLayer; // Holds the tile set in each layer
 		std::vector<Pokemon_Class*> m_voRedPokemon; // Holds the player's Pokemon
