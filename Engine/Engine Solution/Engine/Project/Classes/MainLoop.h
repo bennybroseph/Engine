@@ -39,10 +39,7 @@ namespace Loops
 		void OnLButtonDown(int a_iMouseX, int a_iMouseY);
 		void OnRButtonDown(int a_iMouseX, int a_iMouseY);
 
-		void OnResize(int a_iWidth, int a_iHeight);
-
-		// Can reload textures
-		void ReloadTextures();
+		void OnExit();
 
 		MainLoop();
 		~MainLoop();

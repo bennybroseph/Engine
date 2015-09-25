@@ -22,23 +22,25 @@ struct GLSurface
 namespace Graphics
 {
 	bool Init(const int ac_iWidth, const int ac_iHeight, const int ac_iScale = 3, const bool ac_bFullScreen = false);
-	void Resize(const int ac_iWidth, const int ac_iHeight, const int ac_iScale = 3, const bool ac_bFullScreen = false);
 
 	GLSurface LoadSurface(const std::string ac_sFilename);
 	GLSurface LoadSurface(const SDL_Surface *ac_psdlSurface);
 
 	void UpdateWindowName(const char *szBuffer);
-	void DrawSurface(const GLSurface &ac_glSurface, float a_fPosX, float a_fPosY);
+	void DrawSurface(const GLSurface &ac_glSurface, const float ac_fPosX, const float ac_fPosY);
 	void DrawSurface(const GLSurface &ac_glSurface,
-		float a_fPosX,
-		float a_fPosY,
-		const float ac_fOffsetX,
-		const float ac_fOffsetY,
-		const float ac_fWidth,
-		const float ac_fHeight);
-	void DrawBackground();
+		const float ac_fPosX, const float ac_fPosY,
+		const float ac_fOffsetX, const float ac_fOffsetY,
+		const float ac_fWidth, const float ac_fHeight);
+
+	void Resize(const int ac_iScale = 3, const bool ac_bFullScreen = false);
+	void ToggleFullScreen();
+
 	//Draws the given rect in the given color
-	void Draw_Rect(float, float, float, float, int, int, int);
+	void Draw_Rect(
+		const float ac_fPosX, const float ac_fPosY,
+		const float ac_fWidth, const float ac_fHeight,
+		const int ac_iRed, const int ac_iGreen, const int ac_iBlue);
 	//Draws the given line in the given color
 	void Draw_Line(float, float, float, float, int, int, int);
 	//Draws the given point in the given color

@@ -10,6 +10,8 @@
 #ifndef _FPS_H_
 #define _FPS_H_
 
+#include "..\Text\Text.h"
+
 #include <ctime>
 #include <dos.h>
 #include <stdio.h>
@@ -27,6 +29,7 @@ namespace FPS
 	void Update();
 
 	float GetFPS();
+	void PrintFPS();
 
 	void Quit();
 }

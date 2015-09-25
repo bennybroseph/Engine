@@ -25,13 +25,11 @@ void Loop::Run()
 
         //Calls the redefined Draw function for the class
         Draw(); 
-		Graphics::Flip();
-		
+			
 		FPS::Update();
-		FPS::GetFPS();
-        //CPU saver
-        //SDL_Delay(FPS::Delay);
-        //FPS::FPS_Cap();
+		FPS::PrintFPS();
+
+		Graphics::Flip();
     }
 
     Debug::Log("Exit Loop");

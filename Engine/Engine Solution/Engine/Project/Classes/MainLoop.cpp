@@ -66,11 +66,12 @@ namespace Loops
 		{
 		case SDLK_ESCAPE: running = false; break;
 
-		case SDLK_F1: Graphics::Resize(160, 144, 1); break;
-		case SDLK_F2: Graphics::Resize(160, 144, 2); break;
-		case SDLK_F3: Graphics::Resize(160, 144, 3); break;
-		case SDLK_F4: Graphics::Resize(160, 144, 4); break;
-		case SDLK_F11: Graphics::Resize(160, 144, 1, true); Debug::Log("Full Screen Enabled"); break;
+		case SDLK_F1: Graphics::Resize(1); break;
+		case SDLK_F2: Graphics::Resize(2); break;
+		case SDLK_F3: Graphics::Resize(3); break;
+		case SDLK_F4: Graphics::Resize(4); break;
+		case SDLK_F5: Graphics::Resize(5); break;
+		case SDLK_F11: Graphics::ToggleFullScreen(); break;
 
 		default:
 		{
@@ -107,44 +108,14 @@ namespace Loops
 
 	}
 
-	void MainLoop::OnResize(int a_iWidth, int a_iHeight)
+	void MainLoop::OnExit()
 	{
-		Graphics::Resize(a_iWidth, a_iHeight);
-	}
-
-	void MainLoop::ReloadTextures()
-	{
-		Text::Quit();
-		Text::Init();
-
-		m_glSurfaceBG = Graphics::LoadSurface("Images/background.gif");
-		m_glSurfaceMouse = Graphics::LoadSurface("Images/cursor.png");
-
-		m_voTileLayer[0]->Load_Textures("Images/Overworld_Original.png");
-		m_voTileLayer[1]->Load_Textures("Images/Overworld_Original.png");
-		m_voTileLayer[2]->Load_Textures("Images/Masks.png");
-
-		m_oRed.Load_Textures();
-		for (int i = 0; i < m_voNPC.size(); i++)
-		{
-			m_voNPC[i]->Load_Textures();
-		}
-
-		Battle_System::Load_Textures();
-
-		for (int i = 0; i < m_voRedPokemon.size(); i++)
-		{
-			m_voRedPokemon[i]->Load_Textures(m_voRedPokemon[i]->index);
-		}
-		for (int i = 0; i < m_voEnemyPokemon.size(); i++)
-		{
-			m_voEnemyPokemon[i]->Load_Textures(m_voEnemyPokemon[i]->index);
-		}
+		running = false;
 	}
 
 	MainLoop::MainLoop()
 	{
-		m_glSurfaceBG = Graphics::LoadSurface("Images/background.gif");
+		m_glSurfaceBG = Graphics::LoadSurface("Images/background.png");
 		m_glSurfaceMouse = Graphics::LoadSurface("Images/cursor.png"); // Unused...
 
 		Layer_Class* oTempLayer; // Temporary pointer for the new memory being created
