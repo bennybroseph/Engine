@@ -28,7 +28,8 @@ namespace Graphics
 
 	void UpdateWindowName(const char *szBuffer);
 	void DrawSurface(const GLSurface &ac_glSurface, const float ac_fPosX, const float ac_fPosY);
-	void DrawSurface(const GLSurface &ac_glSurface,
+	void DrawSurface(
+		const GLSurface &ac_glSurface,
 		const float ac_fPosX, const float ac_fPosY,
 		const float ac_fOffsetX, const float ac_fOffsetY,
 		const float ac_fWidth, const float ac_fHeight);
